@@ -40,9 +40,8 @@ def won?(board)
 end
 
 def full?(board)
-  board.each |i| do
-    if position_taken?(board, i) != true
-      return false
-    end
+  if board.detect{|i| position_taken(board, i)!= true}
+    return false
   end
+  return true
 end
